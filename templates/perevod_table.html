@@ -1,0 +1,27 @@
+<h3>Информация о результатах перевода, восстановления и отчисления</h3>
+<table style="border-collapse: collapse; border-color: #ccc;" class="org-tbl-whover" border="1" cellpadding="5" itemprop="eduPerevod">
+  <thead>
+    <tr>
+      <td>Код</td>
+      <td>Наименование специальности, направления подготовки</td>
+      <td>Уровень образования</td>
+      <td>Форма обучения</td>
+      <td>Численность обучающихся, переведенных в другие образовательные организации</td>
+      <td>Численность обучающихся, переведенных из других образовательных организаций</td>
+      <td>Численность восстановленных обучающихся</td>
+      <td>Численность отчисленных обучающихся</td>
+    </tr>
+  </thead>
+  <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="eduCode">{{item['code']}}</td>
+      <td itemprop="eduName">{{item['name']}}</td>
+      <td itemprop="eduLevel">{{item['level']}}</td>
+      <td itemprop="eduForm">{{item['form']}}</td>
+      <td itemprop="numberOut">{{item['NO']}}</td>
+      <td itemprop="numberTo">{{item['NT']}}</td>
+      <td itemprop="numberRes">{{item['NR']}}</td>
+      <td itemprop="numberExp">{{item['NE']}}</td>
+    </tr>{% endfor %}
+  </tbody>
+</table>

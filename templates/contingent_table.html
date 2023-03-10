@@ -1,0 +1,43 @@
+<h3>Информация о численности обучающихся по реализуемым образовательным программам</h3>
+
+<table align="center" class="org-tbl-1" id="chislen-tbl"
+       style="font-size: 11px; border-collapse: collapse; width: 100%;"
+       border="1" cellspacing="0" cellpadding="5" itemprop="eduChislen">
+  <thead class="tbl-header" style="font-size: 11px;">
+    <tr>
+      <td rowspan="2">Код</td>
+      <td rowspan="2">Наименование специальности, <br> направления подготовки</td>
+      <td rowspan="2">Уровень образования:</td>
+      <td rowspan="2">Формы обучения:</td>
+      <td colspan="8">Численность обучающихся за счет: </td>
+      <td rowspan="2">Общая численность обучающихся </td>
+    </tr>
+    <tr>
+      <td>бюджетных <br> ассигнований федерального <br> бюджета</td>
+      <td>из них явл-ся иностр. гражданами</td>
+      <td>бюджетов <br> субъектов <br> Российской Федерации</td>
+      <td>из них явл-ся иностр. гражданами</td>
+      <td>местных бюджетов</td>
+      <td>из них явл-ся иностр. гражданами</td>
+      <td>средств <br> физических <br> и (или) юридических <br> лиц</td>
+      <td>из них явл-ся иностр. гражданами</td>
+    </tr>
+  </thead>
+<tbody>{% for item in sheet %}
+<tr>
+  <td itemprop="eduCode">{{item['code']}}</td>
+  <td itemprop="eduName">{{item['name']}}</td>
+  <td itemprop="eduLevel">{{item['level']}}</td>
+  <td itemprop="eduForm">{{item['form']}}</td>
+  <td itemprop="numberBF">{{item['BF']}}</td>
+  <td itemprop="numberBFF">{{item['BFF']}}</td>
+  <td itemprop="numberBR">{{item['BR']}}</td>
+  <td itemprop="numberBRF">{{item['BRF']}}</td>
+  <td itemprop="numberBM">{{item['BM']}}</td>
+  <td itemprop="numberBMF">{{item['BMF']}}</td>
+  <td itemprop="numberP">{{item['P']}}</td>
+  <td itemprop="numberPF">{{item['PF']}}</td>
+  <td itemprop="numberAll">{{item['All']}}</td>
+</tr>{% endfor %}
+</tbody>
+</table>

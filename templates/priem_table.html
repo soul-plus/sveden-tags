@@ -1,0 +1,33 @@
+<h3>Информация о результатах приема по каждой профессии, специальности среднего профессионального образования</h3>
+
+<table itemprop="eduPriem" cellspacing="0" border="1" cellpadding="5" style="border-collapse: collapse; font-size: 16px;" align="center" class="org-tbl">
+  <thead>
+    <tr>
+      <td rowspan="2">Код</td>
+      <td rowspan="2">Наименование специальности, направления подготовки</td>
+      <td rowspan="2">Уровень образования</td>
+      <td rowspan="2">Формы обучения:</td>
+      <td colspan="4">Результаты приема обучающихся за счет (количество человек):</td>
+      <td rowspan="2">Средняя сумма набранных<br> баллов по всем вступительным испытаниям</td>
+    </tr>
+    <tr>
+      <td>бюджетных ассигнований федерального бюджета</td>
+      <td>бюджетов субъектов Российской Федерации</td>
+      <td>местных бюджетов</td>
+      <td>средств физических и (или) юридических лиц</td>
+    </tr>
+  </thead>
+  <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="eduCode">{{item['code']}}</td>
+      <td itemprop="eduName">{{item['name']}}</td>
+      <td itemprop="eduLevel">{{item['level']}}</td>
+      <td itemprop="eduForm">{{item['form']}}</td>
+      <td itemprop="numberBF">{{item['BF']}}</td>
+      <td itemprop="numberBR">{{item['BR']}}</td>
+      <td itemprop="numberBM">{{item['BM']}}</td>
+      <td itemprop="numberP">{{item['P']}}</td>
+      <td itemprop="score">{{item['score']}}</td>
+    </tr> {% endfor %}
+  </tbody>
+</table>

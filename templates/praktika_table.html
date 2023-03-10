@@ -1,0 +1,33 @@
+<table itemprop="eduProf" cellspacing="0" border="1" cellpadding="5" style="border-collapse: collapse;" class="org-tbl">
+  <thead>
+    <tr>
+      <td rowspan="2"> Код направления</td>
+      <td rowspan="2"> Наименование специальности, направления подготовки</td>
+      <td rowspan="2"> Год начала подготовки</td>
+      <td rowspan="2"> Направленность (профиль) программы</td>
+      <td rowspan="2"> Реализуемые формы обучения</td>
+      <td rowspan="2"> Учебные предметы, курсы, дисциплины (модули)</td>
+      <td rowspan="2"> Использование при реализации образовательных программ электронного обучения и дистанционных образовательных технологий</td>
+      <td colspan="3"> Наличие практики (з.е.)</td>
+    </tr>
+    <tr>
+      <td itemprop="eduPr">Учебная (з.е)</td>
+      <td itemprop="eduPr">Производственная (з.е.)</td>
+      <td itemprop="eduPr">Преддипломная практика для выполнения выпускной квалификационной работы (з.е.)</td>
+    </tr>
+    </thead>>
+    <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="eduCode">{{item['code']}}</td>
+      <td itemprop="eduName">{{item['name']}}</td>
+      <td>{{item['year']}}</td>
+      <td>{{item['profile']}}</td>
+      <td itemprop="eduForm">{{item['form']}}</td>
+      <td itemprop="eduSubject">{{item['subject']}}</td>
+      <td>{{item['technology']}}</td>
+      <td itemprop="eduPr">{{item['PRU']}}</td>
+      <td itemprop="eduPr">{{item['PRP']}}</td>
+      <td itemprop="eduPr">{{item['PRD']}}</td>
+    </tr>{% endfor %}
+ </tbody>
+</table>

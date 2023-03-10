@@ -1,0 +1,36 @@
+
+<h3>Вакантные места для приема (перевода)</h3>
+
+<table itemprop="vacant" class="org-tbl" border="1" cellspacing="0" cellpadding="10 5" style="border-collapse: collapse;" align="center">
+  <thead class="tbl-header">
+    <tr>
+      <td rowspan="2" itemprop="eduCode">Код</td>
+      <td rowspan="2" itemprop="eduName">Наименование профессии, специальности, направления подготовки</td>
+      <td rowspan="2" itemprop="eduLevel">Уровень образования</td>
+      <td rowspan="2" itemprop="eduProf">Образовательная программа, профиль, наименование научной специальности</td>
+      <td rowspan="2" itemprop="eduCourse">Курс</td>
+      <td rowspan="2" itemprop="eduForm">Форма обучения</td>
+      <td colspan="4">Количество вакантных мест для приема (перевода) на места, финансируемые за счет</td>
+    </tr>
+    <tr>
+      <td itemprop="numberBFVacant">бюджетных ассигнований федерального бюджета</td>
+      <td itemprop="numberBRVacant">бюджетов субъектов Российской Федерации</td>
+      <td itemprop="numberBMVacant">местных бюджетов</td>
+      <td itemprop="numberPVacant">по договорам об образовании за счет средств физических и (или) юридических лиц</td>
+    </tr>
+  </thead>
+  <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="eduCode">{{item['code']}}</td>
+      <td itemprop="eduName">{{item['name']}}</td>
+      <td itemprop="eduLevel">{{item['level']}}</td>
+      <td itemprop="eduProf">{{item['prof']}}</td>
+      <td itemprop="eduCourse">{{item['course']}}</td>
+      <td itemprop="eduForm">{{item['form']}}</td>
+      <td itemprop="numberBFVacant">{{item['BFVacant']}}</td>
+      <td itemprop="numberBRVacant">{{item['BRVacant']}}</td>
+      <td itemprop="numberBMVacant">{{item['BMVacant']}}</td>
+      <td itemprop="numberPVacant">{{item['PVacant']}}</td>
+    </tr>{% endfor %}
+  </tbody>
+</table>
