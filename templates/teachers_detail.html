@@ -1,0 +1,64 @@
+{% for item in sheet %}
+<p style="text-align: right;">
+ <a class="ask-btn" href="http://edu.kazgik.ru/message/index.php?id=">Задать вопрос</a>
+</p>
+<p style="text-align: center;">
+<img width="208" alt="{{item['fio']}}" src="" title="{{item['fio']}}">
+</p>
+   <table class="staff-tbl" itemprop="teachingStaff">
+    <tbody>
+      <tr>
+        <td>Ф.И.О.</td>
+        <td itemprop="fio">{{item['fio']}}</td>
+      </tr>
+      <tr>
+        <td>Занимаемая должность</td>
+        <td itemprop="post">{{item['post']}}</td>
+      </tr>
+      <tr>
+        <td>Уровень образования</td>
+        <td itemprop="teachingLevel">{{item['level']}}</td>
+      </tr>
+      <tr>
+        <td>Квалификация</td>
+        <td itemprop="teachingQual">{{item['tqual']}}</td>
+      </tr>
+      <tr>
+        <td>Наименование направления подготовки, специальности</td>
+        <td itemprop="employeeQualification">{{item['equal']}}</td>
+      </tr>
+      <tr>
+        <td>Ученая степень</td>
+        <td itemprop="degree">{{item['degree']}}</td>
+      </tr>
+      <tr>
+        <td>Ученое звание</td>
+        <td itemprop="academStat">{{item['academic_stat']}}</td>
+      </tr>
+      <tr>
+        <td>Общий стаж работы</td>
+        <td itemprop="genExperience">{{item['general_exp']}}</td>
+      </tr>
+      <tr>
+        <td>Стаж научно-педагогической деятельности</td>
+        <td itemprop="specExperience">{{item['special_exp']}}</td>
+      </tr>
+      <tr>
+        <td>Пройденные курсы повышения квалификации</td>
+        <td itemprop="profDevelopment">{{item['prof_dev']}}</td>
+      </tr>
+      <tr>
+        <td>Преподаваемые дисциплины</td>
+        <td itemprop="teachingDiscipline"> {{item['discipline']}}</td>
+      </tr>
+      <tr>
+        <td>Наименование направлений подготовки</td>
+        <td itemprop="teachingOP">{{item['teach_areas']}}</td>
+      </tr>
+      <tr>
+        <td>Награды и почетные звания</td>
+        <td>{{item['honors']}}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endfor %}

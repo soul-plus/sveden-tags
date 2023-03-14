@@ -1,0 +1,40 @@
+<h3>Информация о численности обучающихся по реализуемым образовательным программам</h3>
+
+<table itemprop="eduOp" align="center" class="org-tbl" id="chislen-tbl"
+style="font-size: 11px; border-collapse: collapse; width: 100%;"
+border="1" cellspacing="0" cellpadding="5">
+<thead>
+  <tr>
+    <td>Код</td>
+    <td>Наименование специальности, направления подготовки</td>
+    <td>Уровень образования</td>
+    <td>Образовательная программа, направленность,<br>профиль, наименование научной специальности</td>
+    <td>Формы обучения</td>
+    <td>Описание образовательной программы</td>
+    <td>Учебный план</td>
+    <td>Аннотации к рабочим программам дисциплин</td>
+    <td>Рабочие программы дисциплин</td>
+    <td>Календарный учебный график</td>
+    <td>Методические и иные документы, разработанные для обеспечения образовательного процесса</td>
+    <td>Информация о практиках, предусмотренных соответствующей образовательной программой</td>
+    <td>Использование электронного обучения и дистанционных технологий</td>
+  </tr>
+</thead>
+<tbody>{% for item in sheet %}
+  <tr>
+    <td itemprop="eduCode">{{item['code']}}</td>
+    <td itemprop="eduName">{{item['name']}}</td>
+    <td itemprop="eduLevel">{{item['level']}}</td>
+    <td itemprop="eduProf">{{item['prof']}}</td>
+    <td itemprop="eduForm">{{item['form']}}</td>
+    <td itemprop="opMain">{{item['OOP']}}</td>
+    <td itemprop="educationPlan">{{item['plan']}}</td>
+    <td itemprop="educationAnnotation">{{item['ann']}}</td>
+    <td itemprop="educationRpd">{{item['rpd']}}</td>
+    <td itemprop="educationShedule">{{item['shl']}}</td>
+    <td itemprop="methodology">{{item['met']}}</td>
+    <td itemprop="eduPr">{{item['prac']}}</td>
+    <td itemprop="eduEl">{{item['eos']}}</td>
+  </tr>{% endfor %}
+</tbody>
+</table>

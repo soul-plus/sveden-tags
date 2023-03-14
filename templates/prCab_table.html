@@ -1,0 +1,18 @@
+
+<h3>Сведения о наличии объектов для проведения практических занятий</h3>
+<table itemprop="purposePrac" class="org-tbl" border="1" cellspacing="0" cellpadding="10 5" style="border-collapse: collapse;" align="center">
+  <thead>
+    <tr>
+      <td>Адрес</td>
+      <td>Наименование оборудованных учебных кабинетов/объектов для проведения практических занятий</td>
+      <td>Оснащенность оборудованных учебных кабинетов/объектов для проведения практических занятий</td>
+    </tr>
+  </thead>
+  <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="addressPrac">{{item['address']}}</td>
+      <td itemprop="namePrac">{{item['name']}}</td>
+      <td itemprop="osnPrac">{{item['osn']}}</td>
+    </tr>{% endfor %}
+  </tbody>
+</table>

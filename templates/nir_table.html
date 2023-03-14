@@ -1,0 +1,28 @@
+<h3>Направления и результаты научной (научно-исследовательской) деятельности</h3>
+
+<table itemprop="eduNir" cellspacing="0" border="1" cellpadding="5" style="border-collapse: collapse;" class="org-tbl">
+  <thead>
+    <tr>
+      <td>Код</td>
+      <td>Наименование специальности, направления подготовки</td>
+      <td>Перечень научных направлений, в рамках которых ведется научная (научно-исследовательская) деятельность</td>
+      <td>Образовательная программа, направленность, профиль, наименование научной специальности</td>
+      <td>Уровень образования</td>
+      <td>Название научного направления / научной школы</td>
+      <td>Результаты научной (научно- исследовательской) деятельности</td>
+      <td>Сведения о научно- исследовательской базе для осуществления научной (научно- исследовательской) деятельности</td>
+    </tr>
+    </thead>>
+    <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="eduCode">{{item['code']}}</td>
+      <td itemprop="eduName">{{item['name']}}</td>
+      <td itemprop="perechenNir">{{item['perechen']}}</td>
+      <td itemprop="eduProf">{{item['prof']}}</td>
+      <td itemprop="eduLevel">{{item['level']}}</td>
+      <td itemprop="napravNir">{{item['naprav']}}</td>
+      <td itemprop="resultNir">{{item['result']}}</td>
+      <td itemprop="baseNir">{{item['base']}}</td>
+    </tr>{% endfor %}
+ </tbody>
+</table>

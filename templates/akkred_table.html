@@ -1,0 +1,36 @@
+
+<h3>Информация о сроке действия государственной аккредитации образовательной программы, о формах обучения</h3>
+
+<table itemprop="eduAccred" class="org-tbl" border="1" cellspacing="0" cellpadding="10 5" style="border-collapse: collapse;" align="center">
+  <thead class="tbl-header">
+    <tr>
+      <td>Код</td>
+      <td>Наименование профессии, специальности, направления подготовки</td>
+      <td>Образовательная программа, направленность, профиль, наименование научной специальности</td>
+      <td>Уровень образования</td>
+      <td>Формы обучения</td>
+      <td>Срок получения образования</td>
+      <td>Срок действия государственной аккредитации</td>
+      <td>Языки, на которых осуществляется обучение</td>
+      <td>Учебные предметы, курсы, дисциплины,mпредусмотренныеmсоотв. обр. программой</td>
+      <td>Практики, предусмотренные соотв. обр. программой</td>
+      <td>Информация об использовании при реализации обр. программ эл. обучение
+        и дистанционных обр. технологий</td>
+    </tr>
+  </thead>
+  <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="eduCode">{{item['code']}}</td>
+      <td itemprop="eduName">{{item['name']}}</td>
+      <td itemprop="eduProf">{{item['prof']}}</td>
+      <td itemprop="eduLevel">{{item['level']}}</td>
+      <td itemprop="eduForm">{{item['form']}}</td>
+      <td itemprop="learningTerm">{{item['learningTerm']}}</td>
+      <td itemprop="dateEnd">{{item['dateEnd']}}</td>
+      <td itemprop="language">{{item['language']}}</td>
+      <td itemprop="eduDisc">{{item['discipline']}}</td>
+      <td itemprop="eduPrak">{{item['practice']}}</td>
+      <td itemprop="eduEOS">{{item['eos']}}</td>
+    </tr>{% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+<h3>Образовательные стандарты</h3>
+
+<table itemprop="eduDoc" cellspacing="0" border="1" cellpadding="5" style="border-collapse: collapse;" class="org-tbl">
+  <thead>
+    <tr>
+      <td>Код</td>
+      <td>Наименование специальности, направления подготовки</td>
+      <td>Уровень образования</td>
+      <td>Федеральный образовательный стандарт 3+</td>
+      <td>Федеральный образовательный стандарт 3++</td>
+      <td>Федеральные образовательные требования</td>
+      <td>Локальные образовательные стандарты</td>
+      <td>Локальные образовательные требования</td>
+    </tr>
+    </thead>>
+    <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="eduCode">{{item['code']}}</td>
+      <td itemprop="eduName">{{item['name']}}</td>
+      <td itemprop="eduLevel">{{item['level']}}</td>
+      <td itemprop="eduFedDoc">{{item['doc3']}}</td>
+      <td itemprop="eduFedDoc">{{item['doc3plus']}}</td>
+      <td itemprop="eduStandartTreb">{{item['fedTreb']}}</td>
+      <td itemprop="eduStandartDoc">{{item['locStand']}}</td>
+      <td itemprop="eduStandartTreb">{{item['locTreb']}}</td>
+    </tr>{% endfor %}
+ </tbody>
+</table>

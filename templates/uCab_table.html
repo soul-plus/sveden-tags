@@ -1,0 +1,18 @@
+
+<h3>Сведения о наличии оборудованных учебных кабинетов</h3>
+<table itemprop="purposeCab" class="org-tbl" border="1" cellspacing="0" cellpadding="10 5" style="border-collapse: collapse;" align="center">
+  <thead>
+    <tr>
+      <td>Адрес</td>
+      <td>Наименование оборудованных учебных кабинетов/объектов для проведения практических занятий</td>
+      <td>Оснащенность оборудованных учебных кабинетов/объектов для проведения практических занятий</td>
+    </tr>
+  </thead>
+  <tbody>{% for item in sheet %}
+    <tr>
+      <td itemprop="addressCab">{{item['address']}}</td>
+      <td itemprop="nameCab">{{item['name']}}</td>
+      <td itemprop="osnCab">{{item['osn']}}</td>
+    </tr>{% endfor %}
+  </tbody>
+</table>
