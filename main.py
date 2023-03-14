@@ -145,7 +145,6 @@ if __name__ == '__main__':
         if not os.path.exists(dir_path):
             os.mkdir(dir_path)
 
-        print(select_mode(current_mode)[2])
         final_tbl = html_tbl(select_mode(current_mode)[0], select_mode(current_mode)[1], sheet, select_mode(current_mode)[2])
 
         with open(final_path, "w", encoding="utf-8") as final_file:
