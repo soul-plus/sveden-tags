@@ -18,7 +18,8 @@ def select_mode(mode):
         table = "contingent_table.html"
     elif mode == 2:
         # vacant
-        keys = ['code', 'name', 'level', 'prof', 'course', 'form', 'BFVacant', 'BRVacant', 'BMVacant', 'PVacant']
+        keys = ['code', 'name', 'level', 'prof', 'course', 'form', 'BFVacant', 'BRVacant',
+                'BMVacant', 'PVacant']
         table = "vacant_table.html"
     elif mode == 3:
         # priem
@@ -31,16 +32,19 @@ def select_mode(mode):
         start_row = 2
     elif mode == 5:
         # praktika
-        keys = ['code', 'name', 'year', 'profile', 'form', 'subject', 'technology', 'PRU', 'PRP', 'PRD']
+        keys = ['code', 'name', 'year', 'profile', 'form', 'subject', 'technology',
+                'PRU', 'PRP', 'PRD']
         table = "praktika_table.html"
     elif mode == 6:
         # akkred
-        keys = ['code', 'name', 'prof', 'level', 'form', 'learningTerm', 'dateEnd', 'language', 'discipline', 'practice', 'eos']
+        keys = ['code', 'name', 'prof', 'level', 'form', 'learningTerm', 'dateEnd',
+                'language', 'discipline', 'practice', 'eos']
         table = "akkred_table.html"
         start_row = 2
     elif mode == 7:
         # obrazovanie
-        keys = ['code', 'name', 'level', 'prof', 'form', 'OOP', 'plan', 'ann', 'rpd', 'shl', 'met', 'prac', 'eos']
+        keys = ['code', 'name', 'level', 'prof', 'form', 'OOP', 'plan', 'ann', 'rpd', 'shl',
+                'met', 'prac', 'eos']
         table = "obrazovanie_table.html"
         start_row = 2
     elif mode == 8:
@@ -51,8 +55,7 @@ def select_mode(mode):
     elif mode == 9:
         # prepodavateli
         keys = ['fio', 'post', 'level', 'tqual', 'equal', 'degree', 'academic_stat',
-                'general_exp', 'special_exp',
-                'prof_dev', 'discipline', 'teach_areas', 'honors']
+                'general_exp', 'special_exp', 'prof_dev', 'discipline', 'teach_areas', 'honors']
         table = "teachers_detail.html"
         start_row = 2
     elif mode == 10:
@@ -91,10 +94,11 @@ def html_tbl(template_name, keys, sheet, start_from):
     for i in range(start_from, sheet.max_row + 1):
         for j in range(len(keys)):
             if not(sheet[i][j].value is None):
-                dictionary[keys[j]] = sheet[i][j].value
-                # if sheet.cell(row=i, column=j).hyperlink.target:
-                #     print(sheet.cell(row=i, column=j+1).hyperlink.target)
-            # need to check if cell has a hyperlink
+                if sheet[i][j].hyperlink:
+                    link = sheet[i][j].hyperlink.display
+                    dictionary[keys[j]] = f'<a href="{link}">{sheet[i][j].value}</a>'
+                else:
+                    dictionary[keys[j]] = sheet[i][j].value
             else:
                 dictionary[keys[j]] = '–'
         set_.append(dictionary.copy())
