@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ContingentTable.iml" filepath="$PROJECT_DIR$/.idea/ContingentTable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sveden-tags.iml" filepath="$PROJECT_DIR$/.idea/sveden-tags.iml" />
     </modules>
   </component>
 </project>
