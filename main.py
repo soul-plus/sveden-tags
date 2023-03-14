@@ -7,8 +7,6 @@ import tkinter
 
 env = Environment(loader=FileSystemLoader('templates'))
 
-# нужно добавить
-# 8. Объем образовательной деятельности
 
 def select_mode(mode):
     start_row = 3
@@ -56,7 +54,8 @@ def select_mode(mode):
         # prepodavateli
         keys = ['fio', 'post', 'level', 'tqual', 'equal', 'degree', 'academic_stat',
                 'general_exp', 'special_exp', 'prof_dev', 'discipline', 'teach_areas', 'honors']
-        table = "teachers_detail.html"
+        # table = "teachers_detail.html"
+        table = "teachers_detail_all_in_one.html"
         start_row = 2
     elif mode == 10:
         # mezd
@@ -129,9 +128,9 @@ if __name__ == '__main__':
               "\n 10. Международное сотрудничество \n 11. Обр. стандарты "
               "\n 12. Трудоустройство \n 13. Кабинеты практика \n 14. Кабинеты учебные")
 
-        mode = 15
-        while mode > 14 or mode == 0:
-            mode = int(input(">> "))
+        current_mode = 15
+        while current_mode > 14 or current_mode == 0:
+            current_mode = int(input(">> "))
 
         book = load_workbook(filename=path_to_file)
         worksheets = book.worksheets
@@ -146,11 +145,11 @@ if __name__ == '__main__':
         if not os.path.exists(dir_path):
             os.mkdir(dir_path)
 
-        print(select_mode(mode)[2])
-        final_tbl = html_tbl(select_mode(mode)[0], select_mode(mode)[1], sheet, select_mode(mode)[2])
+        print(select_mode(current_mode)[2])
+        final_tbl = html_tbl(select_mode(current_mode)[0], select_mode(current_mode)[1], sheet, select_mode(current_mode)[2])
 
-        with open(final_path, "w", encoding="utf-8") as file:
-            file.write(final_tbl)
+        with open(final_path, "w", encoding="utf-8") as final_file:
+            final_file.write(final_tbl)
             print('\033[32m' + 'OK. Saved to: ', final_path)
 
     except Exception as e:

@@ -1,0 +1,35 @@
+<h3>Преподавательский состав</h3>
+<table itemprop="teachingStaff" class="org-tbl" border="1" cellspacing="0" cellpadding="10 5" style="border-collapse: collapse;" align="center">
+ <thead>
+   <td>Ф.И.О.</td>
+   <td>Занимаемая должность</td>
+   <td>Уровень образования</td>
+   <td>Квалификация</td>
+   <td>Наименование направления подготовки, специальности</td>
+   <td>Ученая степень</td>
+   <td>Ученое звание</td>
+   <td>Общий стаж работы</td>
+   <td>Стаж научно-педагогической деятельности</td>
+   <td>Пройденные курсы повышения квалификации</td>
+   <td>Преподаваемые дисциплины</td>
+   <td>Наименование направлений подготовки</td>
+   <td>Награды и почетные звания</td>
+ </thead>
+ <tbody>{% for item in sheet %}
+  <tr>
+    <td itemprop="fio">{{item['fio']}}</td>
+    <td itemprop="post">{{item['post']}}</td>
+    <td itemprop="teachingLevel">{{item['level']}}</td>
+    <td itemprop="teachingQual">{{item['tqual']}}</td>
+    <td itemprop="employeeQualification">{{item['equal']}}</td>
+    <td itemprop="degree">{{item['degree']}}</td>
+    <td itemprop="academStat">{{item['academic_stat']}}</td>
+    <td itemprop="genExperience">{{item['general_exp']}}</td>
+    <td itemprop="specExperience">{{item['special_exp']}}</td>
+    <td itemprop="profDevelopment">{{item['prof_dev']}}</td>
+    <td itemprop="teachingDiscipline"> {{item['discipline']}}</td>
+    <td itemprop="teachingOP">{{item['teach_areas']}}</td>
+    <td>{{item['honors']}}</td>
+  </tr>{% endfor %}
+</tbody>
+</table>
