@@ -41,7 +41,7 @@ def select_mode(mode):
         start_row = 2
     elif mode == 7:
         # obrazovanie
-        keys = ['code', 'name', 'level', 'prof', 'form', 'OOP', 'plan', 'ann', 'rpd', 'shl',
+        keys = ['code', 'name', 'level', 'prof', 'form', 'year', 'OOP', 'plan', 'ann', 'rpd', 'shl',
                 'met', 'prac', 'eos']
         table = "obrazovanie_table.html"
         start_row = 2
